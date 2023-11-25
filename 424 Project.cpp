@@ -7,62 +7,37 @@
 
 using namespace std;
 
+string player1name;
+string player1matchup;
+string player2name;
+string player2matchup;
+
 int main() {
-	Player player1("Tyreek Hill", "New York Jets");
-    Player player2("Davante Adams", "Denver Broncos");
-    ComparePlayers p12("Tyreek Hill", "New York Jets", "Davante Adams", "Denver Broncos");
-   // player1.displayInfo();
+    cout<< "Enter Player 1 Name: ";
+    getline(cin, player1name);
+    cout << "Enter Player 1 Matchup: ";
+    getline(cin, player1matchup);
+    cout << "Enter Player 2 Name: ";
+    getline(cin, player2name);
+    cout << "Enter Player 2 Matchup: ";
+    getline(cin, player2matchup);
+	Player player1(player1name,player1matchup);
+    Player player2(player2name,player2matchup);
+    ComparePlayers p12(player1,player2);
 
-  //  QBRankings teamStats;
-
-    // Add teams to the class
-   // teamStats.addQB("Buffalo Bills", 3, 12.8);
-   // teamStats.addQB("Los Angeles Chargers", 31, 20.9);
-  //  teamStats.addQB("Atlanta Falcons", 30, 19.4);
-    player1.displayExpectation();
-    player2.displayExpectation();
-    // ... (continue adding teams)
-
-    // Display the team information
-    //teamStats.displayQB();
+    
     return 0;
-    /*
-        string playerName, playerPosition, playerTeam, playerMatchup;
-        double playerTotalPoints;
-        int playerGamesPlayed;
+ 
 
-        // Input player information
+
+        /* Input player information
         cout << "Enter player name: ";
         getline(cin, playerName);
-
-        cout << "Enter player position: ";
-        getline(cin, playerPosition);
-
-        cout << "Enter player team: ";
-        getline(cin, playerTeam);
 
         cout << "Enter player matchup: ";
         getline(cin, playerMatchup);
 
-        cout << "Enter total points on the season: ";
-        cin >> playerTotalPoints;
-
-        cout << "Enter games played: ";
-        cin >> playerGamesPlayed;
-
-        // Create Player object
-        Player player(playerName, playerPosition, playerTeam, playerMatchup, playerTotalPoints, playerGamesPlayed);
-
-        // Display player information and expectation
-        cout << "\nPlayer Information:\n";
-        player.displayInfo();
-
-        cout << "\nExpectation:\n";
-        player.displayExpectation();
-
-        return 0;
         */
-
 };
 
 

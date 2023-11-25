@@ -46,7 +46,7 @@ public:
             << "\nAverage Points per Game: " << fixed << setprecision(2) << calculateAveragePoints() << endl;
     }*/
 
-    void displayExpectation() {
+    double displayExpectation() {
        //double averagePoints = calculateAveragePoints();
        double currentAvg = 0.0;
        double PMSS = 0.0;
@@ -413,10 +413,10 @@ public:
                 for (const auto& team : teams) {
                     if (team.name == matchup && team.abbr != onTeam) {
                         expAvg = (currentAvg + (team.averagePointsTEAllowed) * team.matchupStrength / 16) / 2. + (team.TEranking - PMSS) / 8;
-                        if (expAvg > 20.0) {
+                        if (expAvg > 12) {
                             cout << "Expecting a strong performance from " << tName << " " << currentPosition << " " << name << " against the " << team.name << "! \nExpected Points : " << expAvg << endl;
                         }
-                        else if (expAvg > 15.0) {
+                        else if (expAvg > 8) {
                             cout << "Expecting a decent performance from " << tName << " " << currentPosition << " " << name << " against the " << team.name << ". \nExpected Points : " << expAvg << endl;
                         }
                         else {
@@ -430,10 +430,10 @@ public:
                 for (const auto& team : teams) {
                     if (team.name == matchup && team.abbr != onTeam) {
                         expAvg = (currentAvg + (team.averagePointsKAllowed) * team.matchupStrength / 16) / 2. + (team.Kranking - PMSS) / 8;
-                        if (expAvg > 20.0) {
+                        if (expAvg > 12) {
                             cout << "Expecting a strong performance from " << tName << " " << currentPosition << " " << name << " against the " << team.name << "! \nExpected Points : " << expAvg << endl;
                         }
-                        else if (expAvg > 15.0) {
+                        else if (expAvg > 7) {
                             cout << "Expecting a decent performance from " << tName << " " << currentPosition << " " << name << " against the " << team.name << ". \nExpected Points : " << expAvg << endl;
                         }
                         else {
@@ -447,10 +447,10 @@ public:
                 for (const auto& team : teams) {
                     if (team.name == matchup && team.abbr != onTeam) {
                         expAvg = (currentAvg + (team.averagePointsDSTAllowed) * team.matchupStrength / 16) / 2. + (team.DSTranking - PMSS) / 8;
-                        if (expAvg > 20.0) {
+                        if (expAvg > 10) {
                             cout << "Expecting a strong performance from " << tName << " " << currentPosition << " " << name << " against the " << team.name << "! \nExpected Points : " << expAvg << endl;
                         }
-                        else if (expAvg > 15.0) {
+                        else if (expAvg > 6) {
                             cout << "Expecting a decent performance from " << tName << " " << currentPosition << " " << name << " against the " << team.name << ". \nExpected Points : " << expAvg << endl;
                         }
                         else {
@@ -461,12 +461,13 @@ public:
                 }
             }
             else {
-                cout << "Not a valid fantasy NFL position" << endl;
+                cout << "Not a valid fantasy NFL player." << endl;
             }
         }
         else {
             cout << "No teams available.\n";
         }
+        return expAvg;
     };
 
 

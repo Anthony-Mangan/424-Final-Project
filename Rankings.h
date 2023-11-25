@@ -27,6 +27,7 @@ public:
 		double averagePointsDSTAllowed;
 		double matchupStrength;
 	};
+
 	vector<Team> teams;
 
 	void addTeams(const string& teamName, const string& teamAbbr, double teamQBRanking, double teamAverageQBPoints, double teamRBRanking, double teamAverageRBPoints, double teamWRRanking, double teamAverageWRPoints, double teamTERanking, double teamAverageTEPoints, double teamKRanking, double teamAverageKPoints, double teamDSTRanking, double teamAverageDSTPoints, double matchupStrength) {
