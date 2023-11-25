@@ -1,0 +1,3 @@
+To use this Fantasy Football Start-Sit Decider, open up the 424FinalProject.sln file. This should include four .h files: PlayerStats.h, Players.h, ComparePlayers.h and Rankings.h. From there, go to the .cpp file
+and run the program. The command window will prompt you to pick 2 players and their respective team matchup. The code will calculate the expected average for the player based on their matchups and previous 
+performances and output the player it recommends that you start.
